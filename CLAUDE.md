@@ -6,7 +6,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 Demonstrations of LLM inference algorithms taken from research papers (e.g. decoding, sampling, and serving techniques), implemented as runnable Jupyter notebooks. The sibling repo `../llm-inference-notes` holds the user's written notes on the same papers; this repo is the code companion.
 
-The repo is at the scaffold stage: the uv project (`pyproject.toml`, `uv.lock`) and the Zotero MCP config (`.mcp.json`) exist, but there are no notebooks or shared package yet. Update this file as the real structure appears.
+The repo is at an early stage: the uv project, the Zotero MCP config (`.mcp.json`) and the first notebook, `notebooks/typical_sampling.ipynb` (locally typical sampling; Qwen2.5-1.5B on `mps`, ipywidgets), exist. There is no shared package yet: that notebook is deliberately self-contained, with all code inline. Extract a package once a second notebook needs the same code. Update this file as the real structure appears.
 
 ## Tooling
 
@@ -26,4 +26,6 @@ The repo is at the scaffold stage: the uv project (`pyproject.toml`, `uv.lock`) 
 - `uv run ruff check .` / `uv run ruff format .`: lint and format.
 - `uv run nbstripout --install`: one-time per clone, strips notebook outputs on commit (writes to `.git/config`).
 
-No tests are defined yet, and nothing else is installed. Add ML dependencies (torch, transformers, etc.) with `uv add` as the first notebook needs them, and record how to run notebooks headlessly here once that matters.
+- `uv run jupyter nbconvert --to notebook --execute notebooks/<name>.ipynb --output-dir <dir> --output executed.ipynb`: run a notebook headlessly (widget output is not saved, so render figures separately to inspect them). The first run downloads the model from Hugging Face.
+
+No tests are defined yet. Algorithms are verified against the Hugging Face reference during development with throwaway scripts, not shipped in the notebook (e.g. `typical_filter` was checked against `transformers.TypicalLogitsWarper`, which requires `0 < mass < 1`, hence the τ slider max of 0.99). Installed ML dependencies: torch, transformers, ipywidgets, matplotlib, numpy; add more with `uv add` as notebooks need them.

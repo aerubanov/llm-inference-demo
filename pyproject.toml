@@ -2,7 +2,13 @@
 name = "llm-inference-demo"
 version = "0.1.0"
 requires-python = ">=3.12"
-dependencies = []
+dependencies = [
+    "ipywidgets>=8.1.9",
+    "matplotlib>=3.11.2",
+    "numpy>=2.5.4",
+    "torch>=2.15.0",
+    "transformers>=5.22.1",
+]
 
 [dependency-groups]
 dev = [
