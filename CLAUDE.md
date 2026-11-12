@@ -6,7 +6,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 Demonstrations of LLM inference algorithms taken from research papers (e.g. decoding, sampling, and serving techniques), implemented as runnable Jupyter notebooks. The sibling repo `../llm-inference-notes` holds the user's written notes on the same papers; this repo is the code companion.
 
-The repo is at an early stage: the uv project, the Zotero MCP config (`.mcp.json`) and the first notebook, `notebooks/typical_sampling.ipynb` (locally typical sampling; Qwen2.5-1.5B on `mps`, ipywidgets), exist. There is no shared package yet: that notebook is deliberately self-contained, with all code inline. Extract a package once a second notebook needs the same code. Update this file as the real structure appears.
+The repo is at an early stage: the uv project, the Zotero MCP config (`.mcp.json`) and the first notebook, `notebooks/typical_sampling.ipynb` (locally typical sampling; Qwen2.5-1.5B on `mps`, ipywidgets) and `notebooks/beam_search_regularized_map.ipynb` (beam search vs exact MAP and UID regularizers; MarianMT `opus-mt-de-en`, not Qwen: the small Qwen2.5 models showed no MAP degradation, see the intro cell), exist. There is no shared package yet: the notebooks are deliberately self-contained, with all code inline, and share only the widget/plot conventions, not code. Extract a package once a notebook needs code that another one already has. Update this file as the real structure appears.
 
 ## Tooling
 

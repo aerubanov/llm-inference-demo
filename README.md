@@ -38,5 +38,6 @@ Each notebook covers one algorithm or paper and is self-contained. Its first cel
 | Notebook | Topic | Description | Paper |
 | --- | --- | --- | --- |
 | [`typical_sampling.ipynb`](notebooks/typical_sampling.ipynb) | Decoding / sampling | Sample only tokens whose information content is close to the distribution's entropy; compared with greedy on a coin, a die and Qwen2.5-1.5B. | Meister et al., *Locally Typical Sampling* ([arXiv:2202.00666](https://arxiv.org/abs/2202.00666)) |
+| [`beam_search_regularized_map.ipynb`](notebooks/beam_search_regularized_map.ipynb) | Decoding / search | Beam search versus exact MAP search and uniform-information-density regularizers, on German→English translation with MarianMT (~300 MB). | Meister et al., *If Beam Search is the Answer, What was the Question?* ([arXiv:2010.02650](https://arxiv.org/abs/2010.02650)) |
 
 More notebooks for other inference methods will be added to this table.
