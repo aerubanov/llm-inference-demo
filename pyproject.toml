@@ -6,6 +6,7 @@ dependencies = [
     "ipywidgets>=8.1.9",
     "matplotlib>=3.11.2",
     "numpy>=2.5.4",
+    "sentencepiece>=0.2.3",
     "torch>=2.15.0",
     "transformers>=5.22.1",
 ]
